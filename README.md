@@ -1,5 +1,9 @@
 # CASDr
 
+<!-- badges: start -->
+[![R build status](https://github.com/floswald/CASDr/workflows/R-CMD-check/badge.svg)](https://github.com/floswald/CASDr/actions)
+<!-- badges: end -->
+
 [https://www.casd.eu](https://www.casd.eu) is the secure data platform for French Admin data. This packages wants to collect a set of `R` tools which researchers may find useful.
 
 ## Why Does The World Need This Package
