@@ -1,0 +1,24 @@
+Package: CASDr
+Type: Package
+Title: Tools to work with CASD Data
+Version: 0.1.0
+Author: Florian Oswald
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    data.table,
+    dplyr,
+    ggplot2,
+    Rcpp,
+    RcppArmadillo,
+    sf
+LinkingTo: 
+    RcppArmadillo,
+    Rcpp
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat
