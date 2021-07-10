@@ -25,7 +25,7 @@ jobs:
            brew install udunits cairo freetype
            brew install udunits cairo
            brew reinstall freetype
-           Rscript -e "install.packages('sf', type='mac.binary.mavericks', dependencies=TRUE)"
+           Rscript -e "install.packages('sf', type='mac.binary', dependencies=TRUE)"
 
       - name: Query dependencies
         run: |
