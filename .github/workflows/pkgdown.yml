@@ -20,7 +20,7 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
-      - name: "Install system pkgs"
+      - name: Install system pkgs
          run: |
            brew install udunits cairo freetype
            brew install udunits cairo
