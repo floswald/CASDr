@@ -1,7 +1,7 @@
 # `CASDr` : `R` Tools for the secure CASD Environment
 
 <!-- badges: start -->
-![](man/figures/lifecycle-experimental.svg)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![R build status](https://github.com/floswald/CASDr/workflows/R-CMD-check/badge.svg)](https://github.com/floswald/CASDr/actions)
 <!-- badges: end -->
 
