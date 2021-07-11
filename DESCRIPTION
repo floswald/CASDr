@@ -15,10 +15,12 @@ Imports:
     ggplot2,
     Rcpp,
     RcppArmadillo,
-    sf
+    sf,
+    lifecycle
 LinkingTo: 
     RcppArmadillo,
     Rcpp
 RoxygenNote: 7.1.1
 Suggests: 
     testthat
+RdMacros: lifecycle
