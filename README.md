@@ -7,7 +7,9 @@
 
 ## CASD
 
-[CASD](https://www.casd.eu) is the secure data platform for French Admin data. This is typical high-security data access system, which allows researchers to work on a remote server which can be accessed with fingerprint and card authentication. The remote server is not connected to the internet, and data export from the server is subject to statistical disclosure controls. 
+[CASD](https://www.casd.eu) is the secure data platform for French Admin data. Since it's inception in 2010, there have been 321 [publications registered](https://www.casd.eu/toutes-les-publications/). 
+
+CASD is typical high-security data access system, which allows researchers to work on a remote server which can be accessed with fingerprint and card authentication. The remote server is not connected to the internet, and data export from the server is subject to statistical disclosure controls. It's a challenging development environment.
 
 ## Why Does The World Need This Package
 
