@@ -60,31 +60,48 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="casdr" class="section level1">
+<div id="casdr--r-tools-for-the-secure-casd-environment" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#casdr" class="anchor"></a>CASDr</h1></div>
+<a href="#casdr--r-tools-for-the-secure-casd-environment" class="anchor"></a><code>CASDr</code> : <code>R</code> Tools for the secure CASD Environment</h1></div>
 <!-- badges: start -->
 
-<p><a href="https://www.casd.eu">https://www.casd.eu</a> is the secure data platform for French Admin data. This packages wants to collect a set of <code>R</code> tools which researchers may find useful.</p>
+<div id="casd" class="section level2">
+<h2 class="hasAnchor">
+<a href="#casd" class="anchor"></a>CASD</h2>
+<p><a href="https://www.casd.eu">CASD</a> is the secure data platform for French Admin data. This is typical high-security data access system, which allows researchers to work on a remote server which can be accessed with fingerprint and card authentication. The remote server is not connected to the internet, and data export from the server is subject to statistical disclosure controls.</p>
+</div>
 <div id="why-does-the-world-need-this-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#why-does-the-world-need-this-package" class="anchor"></a>Why Does The World Need This Package</h2>
 <ul>
-<li>Thousands of researchers work with CASD data, each of them rolling their own version of code which performs the same task.</li>
+<li>Many researchers work with CASD data, each of them rolling their own version of code which performs very similar tasks.</li>
 <li>This means we don’t promote best practices efficiently.</li>
 <li>It means that we don’t catch bugs.</li>
-<li>In an ideal world, there would be one package with a set of tested tools that each researcher can apply to have copied into their project space on the system from github or CRAN, and base their work on this.</li>
+<li>It means we cannot <em>ever</em> work on our code without being connected to the system. Many tasks involve testing code to work as expected, <em>before</em> one uses it on the actual data.</li>
+<li>It means <em>everybody</em> who starts working on the system has to pay an important setup cost, finding out how to do <code>X</code>.</li>
+<li>In an ideal world, there would be one package with a set of <strong>tested tools</strong> that each researcher can apply to have copied into their project space on the system from github or CRAN, and base their work on this.</li>
 </ul>
-<p><em>This does not necessarily have to be this package. But it could be part of a start</em></p>
+<p><em>It does not necessarily have to be this package. But it could be part of a start.</em></p>
 </div>
-<div id="what-tasks" class="section level2">
+<div id="what-this-package-could-deliver" class="section level2">
 <h2 class="hasAnchor">
-<a href="#what-tasks" class="anchor"></a>What Tasks?</h2>
+<a href="#what-this-package-could-deliver" class="anchor"></a>What this Package Could Deliver</h2>
+<p>Imagine the following rosy scenario:</p>
+<ol>
+<li>You obtain money and security clearance via the committee du secret statistique to work on some data on CASD. Suppose DADS - what else?</li>
+<li>You have of course no idea how to even load the damn thing. It’s in SAS.</li>
+<li>Imagine you had a website like this one here, where a simple vignette would show in a worked example how to load this step by step?</li>
+<li>Imagine it would go further and introduce you to some of more finicky details and tips and tricks in order to achieve a certain task.</li>
+</ol>
+</div>
+<div id="which-tasks" class="section level2">
+<h2 class="hasAnchor">
+<a href="#which-tasks" class="anchor"></a>Which Tasks?</h2>
 <p>CASD hosts a huge number of datasets, many of them in several versions that vary over time. So which tasks?</p>
 <ol>
 <li>Read a set of columns out of a certain SAS database.</li>
-<li>Compute straight line distance between two vectors of lat-lon coordinates and other geospatial operations</li>
-<li>General data cleaning of a certain database</li>
+<li>Compute straight line distance between two vectors of lat-lon coordinates and other geospatial operations.</li>
+<li>General data cleaning of a certain database.</li>
 </ol>
 </div>
 <div id="but--user-specific-requirements" class="section level2">
@@ -105,10 +122,16 @@
 </div>
 <div id="what-does-tested-mean" class="section level2">
 <h2 class="hasAnchor">
-<a href="#what-does-tested-mean" class="anchor"></a>What does <em>Tested</em> mean</h2>
+<a href="#what-does-tested-mean" class="anchor"></a>What does <em>Tested</em> mean?</h2>
+<p>We want to run automated unit tests on code we use on CASD like here on github actions: <a href="https://github.com/floswald/CASDr/actions"><img src="https://github.com/floswald/CASDr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></p>
+<blockquote>
+<p>But CASD is an offline environment!</p>
+</blockquote>
+<p>Correct:</p>
 <ol>
-<li>One would have to build fake datasets to test package functionality outside of CASD.</li>
-<li>At the same time developers would have to continuously run the unit tests inside CASD, change the code base, and improve the package on github.</li>
+<li>One would have to build fake datasets to test package functionality outside of CASD. No single bite of sensitive data needs to be exported from CASD.</li>
+<li>One would have to setup a way that allows to import the R package <em>into</em> CASD at a certain regular frequency. It’s generally no problem to import code onto one’s user space.</li>
+<li>We would then run the same unit tests inside CASD, make changes to the code on github. Rinse, and repeat.</li>
 </ol>
 </div>
 <div id="is-there-any-involvement-of-casd" class="section level2">
