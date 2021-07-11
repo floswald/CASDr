@@ -3,9 +3,9 @@ Type: Package
 Title: Tools to work with CASD Data
 Version: 0.1.0
 Author: Florian Oswald
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: Florian Oswald <florian.oswald@gmail.com>
+Description: Collect Tools to work with R on CASD
+    This is an almost empty proposal package for now.
 License: MIT
 Encoding: UTF-8
 LazyData: true

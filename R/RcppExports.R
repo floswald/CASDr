@@ -9,6 +9,14 @@ rcpp_hello <- function() {
 
 #' geo dist
 #'
+#' compute straight line distance in WGS84 CRS (lat,long) in km.
+#' Uses the sperical law of cosines https://en.wikipedia.org/wiki/Spherical_law_of_cosines
+#' as used here https://www.movable-type.co.uk/scripts/latlong.html
+#'
+#' @author Chris Veness
+#'
+#' @references https://github.com/chrisveness/geodesy www.movable-type.co.uk/scripts/latlong.html
+#'
 #' @export
 geo_dist <- function(lat1, lon1, lat2, lon2) {
     .Call(`_CASDr_geo_dist`, lat1, lon1, lat2, lon2)
@@ -16,15 +24,25 @@ geo_dist <- function(lat1, lon1, lat2, lon2) {
 
 #' ST_Dwithin: Geographic Distance
 #'
-#' Computes number of units within distance `cutoff` in meters from degree location measures.
+#' Computes number of units within distance `cutoff` in meters from lat-long measures.
+#' Efficient implementation using C++ library Armadillo.
+#'
 #' @export
 cppST_DWithin <- function(lat1, lon1, coord2, cut) {
     .Call(`_CASDr_cppST_DWithin`, lat1, lon1, coord2, cut)
 }
 
-#' cppST_Dist
+#' cppST_Dist: RcppArmadillo Fast Distances
 #'
 #' Computes distance in kilometers to a single point.
+#'
+#' This function is for efficient use of geodesic distance calculations
+#' inside a grouped data.table. In particular, for two sets of locations,
+#' for instance `start_commute` and `end_commute`, each given by a coordinate pair
+#' and a string identifier, this function can be called `by` each value of `end_commute`
+#' in order to compute all commuting distances from all `start_commute` locations to the
+#' particular `end_commute` location.
+#'
 #' @export
 cppST_Dist <- function(lat1, lon1, lat2, lon2) {
     .Call(`_CASDr_cppST_Dist`, lat1, lon1, lat2, lon2)
